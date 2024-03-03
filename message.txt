@@ -1,5 +1,6 @@
-Hello World,
+Hello Volunteers,
 
-This is my text to you from automated messaging system.
+Welcome to the era of automation. Sending 1st message from whats app web using bot.
 
-Thank You
+Thank You,
+Raghuveer Singh
