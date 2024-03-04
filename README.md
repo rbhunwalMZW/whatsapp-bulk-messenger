@@ -16,6 +16,9 @@ Note: Another version of similar project is available which supports sending med
 1. Install python - >=v3.6
 2. Run `pip install -r requirements.txt`
 
+# NOTE: 
+Please download your browser driver and save that in the "bin" folder as per your OS. I have saved in MAC folder as my OS is "darwin"
+
 # Steps
 
 1. Enter the message you want to send inside `message.txt` file.

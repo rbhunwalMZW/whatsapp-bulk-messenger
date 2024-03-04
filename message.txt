@@ -1,6 +1,6 @@
 Hello Volunteers,
 
-Welcome to the era of automation. Sending 1st message from whats app web using bot.
+Welcome to the era of automation. Sending 2nd message from whats app web using bot.
 
 Thank You,
 Raghuveer Singh

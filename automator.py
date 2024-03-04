@@ -7,6 +7,16 @@ from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 from urllib.parse import quote
 import os
+import platform
+
+def get_os():
+    os_name = platform.system()
+    if os_name == "Windows":
+        return "Windows"
+    elif os_name == "Darwin":
+        return "macOS"
+    else:
+        return "Other"
 
 options = Options()
 options.add_experimental_option("excludeSwitches", ["enable-logging"])
@@ -17,7 +27,15 @@ os.system("")
 os.environ["WDM_LOG_LEVEL"] = "0"
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
-DRIVER_BIN = os.path.join(PROJECT_ROOT, "bin/chromedriver")
+os_type = get_os()
+if os_type=="Windows":
+	DRIVER_BIN = os.path.join(PROJECT_ROOT, "bin/win/chromedriver")
+elif os_type=="macOS":
+	DRIVER_BIN = os.path.join(PROJECT_ROOT, "bin/mac/chromedriver")
+else:
+	print("Error in getting OS details")
+
+
 
 class style():
     BLACK = '\033[30m'
@@ -70,6 +88,8 @@ driver = webdriver.Chrome(executable_path=DRIVER_BIN, options=options)
 #driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 print('Once your browser opens up sign in to web whatsapp')
 driver.get('https://web.whatsapp.com')
+# wait for whats app web to get loaded
+sleep(5)
 input(style.MAGENTA + "AFTER logging into Whatsapp Web is complete and your chats are visible, press ENTER..." + style.RESET)
 for idx, number in enumerate(numbers):
 	number = number.strip()
